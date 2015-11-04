@@ -1,0 +1,46 @@
+From ecf12f418eb3a186af0276420576bac9e7974e71 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Andreas=20M=C3=BCller?= <schnitzeltony@googlemail.com>
+Date: Wed, 4 Nov 2015 10:36:26 +0100
+Subject: [PATCH] configure paths for target qmake properly
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Upstream-Status: Inappropriate [OE specific]
+
+Signed-off-by: Andreas Müller <schnitzeltony@googlemail.com>
+---
+ configure | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/configure b/configure
+index 6f338f3..82e3ae3 100755
+--- a/configure
++++ b/configure
+@@ -3842,12 +3842,12 @@ QT_CONFIGURE_STRS_ALL=$QT_CONFIGURE_STRS
+ 
+ QT_CONFIGURE_STR_OFFSETS=
+ QT_CONFIGURE_STRS=
+-addConfStr "$CFG_SYSROOT"
++addConfStr ""
+ addConfStr "$QT_REL_HOST_BINS"
+ addConfStr "$QT_REL_HOST_LIBS"
+ addConfStr "$QT_REL_HOST_DATA"
+ addConfStr "$shortxspec"
+-addConfStr "$shortspec"
++addConfStr "$shortxspec"
+ 
+ #-------------------------------------------------------------------------------
+ # generate qconfig.cpp
+@@ -3866,7 +3866,7 @@ static const char qt_configure_installation          [12+11]    = "qt_instdate=2
+ static const char qt_configure_prefix_path_str       [512 + 12] = "qt_prfxpath=$QT_INSTALL_PREFIX";
+ #ifdef QT_BUILD_QMAKE
+ static const char qt_configure_ext_prefix_path_str   [512 + 12] = "qt_epfxpath=$QT_EXT_PREFIX";
+-static const char qt_configure_host_prefix_path_str  [512 + 12] = "qt_hpfxpath=$QT_HOST_PREFIX";
++static const char qt_configure_host_prefix_path_str  [512 + 12] = "qt_hpfxpath=$QT_EXT_PREFIX";
+ #endif
+ 
+ static const short qt_configure_str_offsets[] = {
+-- 
+2.1.0
+
