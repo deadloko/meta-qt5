@@ -141,6 +141,10 @@ export OE_QMAKE_STRIP
 OE_QMAKE_QMAKE_ORIG = "${STAGING_BINDIR_NATIVE}${QT_DIR_NAME}/qmake"
 OE_QMAKE_QMAKE = "bin/qmake"
 
+# -no-accessibility 
+#        -no-sql-sqlite 
+#        -no-gui 
+
 do_configure() {
     # we need symlink in path relative to source, because
     # EffectivePaths:Prefix is relative to qmake location
@@ -157,13 +161,10 @@ do_configure() {
         -no-libjpeg \
         -no-libpng \
         -no-gif \
-        -no-accessibility \
         -no-cups \
         -no-nis \
-        -no-gui \
         -no-qml-debug \
         -no-sql-mysql \
-        -no-sql-sqlite \
         -no-opengl \
         -no-openssl \
         -no-xcb \

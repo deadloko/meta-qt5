@@ -39,6 +39,11 @@ do_generate_qt_config_file() {
     :
 }
 
+
+#    -no-accessibility 
+#    -no-gui 
+#    -no-sql-sqlite 
+
 EXTRA_OECONF = " \
     -prefix ${prefix} \
     -sysroot ${STAGING_DIR_NATIVE} \
@@ -47,13 +52,10 @@ EXTRA_OECONF = " \
     -no-libjpeg \
     -no-libpng \
     -no-gif \
-    -no-accessibility \
     -no-cups \
     -no-nis \
-    -no-gui \
     -no-qml-debug \
     -no-sql-mysql \
-    -no-sql-sqlite \
     -no-opengl \
     -no-openssl \
     -no-xcb \
